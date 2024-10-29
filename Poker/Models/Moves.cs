@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Poker
 {
-    internal enum Move
+    public enum Moves
     {
         Fold,
         Check,

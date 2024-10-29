@@ -1,6 +1,6 @@
 ﻿namespace Poker
 {
-    partial class Form1
+    partial class GameForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             folderBrowserDialog1 = new FolderBrowserDialog();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
@@ -41,10 +41,10 @@
             pictureBox8 = new PictureBox();
             pictureBox9 = new PictureBox();
             pictureBox5 = new PictureBox();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
+            foldButton = new Button();
+            checkButton = new Button();
+            raiseButton = new Button();
+            allinButton = new Button();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -121,7 +121,6 @@
             label1.Size = new Size(124, 45);
             label1.TabIndex = 6;
             label1.Text = "label1";
-            label1.Click += label1_Click;
             // 
             // pictureBox6
             // 
@@ -171,45 +170,45 @@
             pictureBox5.TabIndex = 11;
             pictureBox5.TabStop = false;
             // 
-            // button2
+            // foldButton
             // 
-            button2.Location = new Point(910, 550);
-            button2.Name = "button2";
-            button2.Size = new Size(130, 51);
-            button2.TabIndex = 12;
-            button2.Text = "Fold";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            foldButton.Location = new Point(910, 550);
+            foldButton.Name = "foldButton";
+            foldButton.Size = new Size(130, 51);
+            foldButton.TabIndex = 12;
+            foldButton.Text = "Fold";
+            foldButton.UseVisualStyleBackColor = true;
+            foldButton.Click += foldButtonClick;
             // 
-            // button3
+            // checkButton
             // 
-            button3.Location = new Point(1075, 550);
-            button3.Name = "button3";
-            button3.Size = new Size(130, 51);
-            button3.TabIndex = 13;
-            button3.Text = "Check";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            checkButton.Location = new Point(1075, 550);
+            checkButton.Name = "checkButton";
+            checkButton.Size = new Size(130, 51);
+            checkButton.TabIndex = 13;
+            checkButton.Text = "Check";
+            checkButton.UseVisualStyleBackColor = true;
+            checkButton.Click += checkButtonClick;
             // 
-            // button4
+            // raiseButton
             // 
-            button4.Location = new Point(1235, 550);
-            button4.Name = "button4";
-            button4.Size = new Size(130, 51);
-            button4.TabIndex = 14;
-            button4.Text = "Raise";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            raiseButton.Location = new Point(1235, 550);
+            raiseButton.Name = "raiseButton";
+            raiseButton.Size = new Size(130, 51);
+            raiseButton.TabIndex = 14;
+            raiseButton.Text = "Raise";
+            raiseButton.UseVisualStyleBackColor = true;
+            raiseButton.Click += raiseButtonClick;
             // 
-            // button5
+            // allinButton
             // 
-            button5.Location = new Point(1394, 550);
-            button5.Name = "button5";
-            button5.Size = new Size(130, 51);
-            button5.TabIndex = 15;
-            button5.Text = "All in";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            allinButton.Location = new Point(1394, 550);
+            allinButton.Name = "allinButton";
+            allinButton.Size = new Size(130, 51);
+            allinButton.TabIndex = 15;
+            allinButton.Text = "All in";
+            allinButton.UseVisualStyleBackColor = true;
+            allinButton.Click += allinButtonClick;
             // 
             // label2
             // 
@@ -275,10 +274,10 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(allinButton);
+            Controls.Add(raiseButton);
+            Controls.Add(checkButton);
+            Controls.Add(foldButton);
             Controls.Add(pictureBox5);
             Controls.Add(pictureBox8);
             Controls.Add(pictureBox9);
@@ -320,10 +319,10 @@
         private PictureBox pictureBox8;
         private PictureBox pictureBox9;
         private PictureBox pictureBox5;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
+        private Button foldButton;
+        private Button checkButton;
+        private Button raiseButton;
+        private Button allinButton;
         private Label label2;
         private Label label3;
         private Label label4;

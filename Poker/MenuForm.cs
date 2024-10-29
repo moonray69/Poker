@@ -12,10 +12,10 @@ namespace Poker
 {
 
 
-    public partial class Form2 : Form
+    public partial class MenuForm : Form
     {
         string nickname;
-        public Form2(string nickname)
+        public MenuForm(string nickname)
         {
             InitializeComponent();
             this.nickname = nickname;
@@ -28,7 +28,7 @@ namespace Poker
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1(nickname);
+            GameForm f1 = new GameForm(nickname);
             f1.ShowDialog();
             Hide();
         }

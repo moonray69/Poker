@@ -1,6 +1,6 @@
 ﻿namespace Poker
 {
-    partial class Form5
+    partial class RegistrationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrationForm));
             label2 = new Label();
             label1 = new Label();
             surnameTextBox = new TextBox();

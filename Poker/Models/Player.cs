@@ -23,6 +23,12 @@ namespace Poker.Models
         public string Phone { get; set; }
         public string Password { get; set; }
 
+        public Card[] Cards { get; set; } = new Card[2];
+
+        public int CurrentRate { get; set; } = 0;
+
+        public Moves LastMove { get; set; }
+
         //Player()
         //{
         //    Name = "";

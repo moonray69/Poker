@@ -1,5 +1,6 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using Poker.Models;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,9 +13,9 @@ using System.Windows.Forms;
 
 namespace Poker
 {
-    public partial class Form4 : Form
+    public partial class SignInForm : Form
     {
-        public Form4()
+        public SignInForm()
         {
             InitializeComponent();
         }
@@ -35,7 +36,7 @@ namespace Poker
             if(foundPlayer != null)
             {
                 Player.currentPlayer = foundPlayer;
-                Form2 f2 = new Form2(nickname);
+                MenuForm f2 = new MenuForm(nickname);
                 Hide();
                 f2.ShowDialog();
                 Close();
@@ -48,7 +49,7 @@ namespace Poker
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form5 f5 = new Form5();
+            RegistrationForm f5 = new RegistrationForm();
             Hide();
             f5.ShowDialog();
             Show();// ховає зайві вікна

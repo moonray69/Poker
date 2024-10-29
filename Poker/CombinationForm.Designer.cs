@@ -1,6 +1,6 @@
 ﻿namespace Poker
 {
-    partial class Form3
+    partial class CombinationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CombinationForm));
             imageList1 = new ImageList(components);
             pictureBox37 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox37).BeginInit();

@@ -1,6 +1,6 @@
 ﻿namespace Poker
 {
-    partial class Form4
+    partial class SignInForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignInForm));
             button1 = new Button();
             button2 = new Button();
             textBox1 = new TextBox();
