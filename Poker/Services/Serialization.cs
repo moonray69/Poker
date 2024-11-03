@@ -31,6 +31,14 @@ namespace Poker
             File.WriteAllText(fileName, jsonOutput);
             return true;
         }
+        public static bool saveToFile(List<Player> players)
+        {
+            string fileName = Path.Combine(Environment.CurrentDirectory, FILE_NAME);
+            
+            string jsonOutput = JsonSerializer.Serialize(players, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(fileName, jsonOutput);
+            return true;
+        }
         //? = це означає , що може бути нал
         public static Player ? findPlayer(string username, string password) 
         {
@@ -49,6 +57,28 @@ namespace Poker
                 jsonData = JsonSerializer.Deserialize<List<Player>>(existingData) ?? new List<Player>();
             }
             return jsonData;
+        }
+
+        // write method that get all players and update current player. And save this data to json
+
+        public static void updatePlayer()
+        {
+            List<Player> players = getAllPlayers();
+            bool playerFound = false;
+            for (int i = 0; i < players.Count; i++)
+            {
+                if (players[i].Nickname == Player.currentPlayer.Nickname )
+                {
+                    players[i] = Player.currentPlayer;
+                    playerFound = true;
+                    break;
+                }
+            }
+            if (!playerFound)
+            {
+                players.Add(Player.currentPlayer);
+            }
+            saveToFile(players);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Poker.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,6 +29,12 @@ namespace Poker
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (Player.currentPlayer.Balance < 5)
+            {
+                MessageBox.Show("Insufficient balance for entry fee. Game cannot start.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             GameForm f1 = new GameForm(nickname);
             f1.ShowDialog();
             Hide();
@@ -35,10 +42,15 @@ namespace Poker
 
         private void button4_Click(object sender, EventArgs e)
         {
-             CashRegister cash = new CashRegister();
+            CashRegister cash = new CashRegister();
 
             cash.ShowDialog();
             //Hide();
+        }
+
+        private void MenuForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Serialization.updatePlayer();
         }
     }
 }

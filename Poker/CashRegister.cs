@@ -13,6 +13,7 @@ namespace Poker
 {
     public partial class CashRegister : Form
     {
+        // Змінна для зберігання попереднього балансу
         public CashRegister()
         {
             InitializeComponent();
@@ -20,13 +21,32 @@ namespace Poker
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double amount = Convert.ToDouble(textBox1.Text);
+            // Перевірка на коректне введення суми
+            if (!double.TryParse(textBox1.Text, out double amount) || amount <= 0)
+            {
+                MessageBox.Show("Please enter a positive amount.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            //double amount = Convert.ToDouble(textBox1.Text);
 
             double convert = 10.0;
 
             double chips = amount / convert;
 
+            // Обчислюємо новий баланс
+            double newBalance = Player.currentPlayer.Balance + chips;
+
+            if (newBalance < 0)
+            {
+                MessageBox.Show("Error: Balance cannot be negative.", "Insufficient Balance", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            //тута
             Player.currentPlayer.Balance += (int)chips;
+
             textBox2.Text = chips.ToString();
             MessageBox.Show($"{chips} chips have been added to your balance.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

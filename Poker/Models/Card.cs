@@ -7,9 +7,6 @@ using System.Threading.Tasks;
 
 namespace Poker
 {
-
-   
-   
     public class Card
     {
         //Dictionary - словник , є ключ і є значення

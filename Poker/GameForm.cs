@@ -12,28 +12,27 @@ namespace Poker
         Player pc = new Player { Nickname = "Bob", Balance = 1000 };
         int countMoves = 0;
         //вказуємо шлях до зображень карт 
-        static string CARD_IMG = @"C:\Users\Acer\Desktop\cards\PlayingCards\PNG-cards-1.3";
+        static string CARD_IMG = @"D:\универ\Poker\Poker\images\";
         Deck deck = new Deck();
 
         bool openCard = false;
         private bool isUser = true;
-        private int rate = 5;
+        // private int rate = 5;
         private Card[] board = new Card[5];
         int raiseBet = 0;
 
-
-        public GameForm(string nickname)
+        //для нової гри 
+        private void restart()
         {
-            InitializeComponent();
+            pc.Balance = 1000;
+            pc.Rate = 5;
+            Player.currentPlayer.Rate = 5;
+            deck = new Deck();
+            //rate = 5;
+            isUser = true;
+            board = new Card[5];
+            raiseBet = 0;
 
-            string playernick = "Nickname";
-
-            label1.Text = nickname;
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
             CheckingCombinations combinations = new CheckingCombinations();
 
             deck.Shuffle();
@@ -48,8 +47,8 @@ namespace Poker
             Card tablecard1 = deck.DrawCard();
             Card tablecard2 = deck.DrawCard();
             Card tablecard3 = deck.DrawCard();
-            Player.currentPlayer.Balance -= rate;
-            pc.Balance -= rate;
+            Player.currentPlayer.Balance -= 5;
+            pc.Balance -= 5;
             board[0] = tablecard1;
             board[1] = tablecard2;
             board[2] = tablecard3;
@@ -57,7 +56,9 @@ namespace Poker
             //pc cards
             Card pcCard1 = deck.DrawCard();
             Card pcCard2 = deck.DrawCard();
-
+            //D:\универ\Poker\Poker\images\background.png
+            pictureBox9.BackgroundImage = Image.FromFile($"{CARD_IMG}\\background.png");
+            pictureBox8.BackgroundImage = Image.FromFile($"{CARD_IMG}\\background.png");
 
             pc.Cards[0] = pcCard1;
             pc.Cards[1] = pcCard2;
@@ -72,21 +73,30 @@ namespace Poker
             pictureBox5.BackgroundImage = Image.FromFile($"{CARD_IMG}\\{tablecard1.GetImgFileName()}");
             pictureBox1.BackgroundImage = Image.FromFile($"{CARD_IMG}\\{tablecard2.GetImgFileName()}");
             pictureBox2.BackgroundImage = Image.FromFile($"{CARD_IMG}\\{tablecard3.GetImgFileName()}");
-            label2.Text = rate.ToString();
-            label3.Text = rate.ToString();
-            // pictureBox4.BackgroundImage = Image.
-            //вивести свої дві карти і 3 карти на стіл, а карти бота не показувать 
-            //Card card1 = new Card(Suit.Spades, Rank.Ten, "");
-            //Card card2 = new Card(Suit.Hearts, Rank.Ten, "");
-            //Card card3 = new Card(Suit.Diamonds, Rank.Jack, "");
-            //Card card4 = new Card(Suit.Clubs, Rank.Queen, "");
-            //Card card5 = new Card(Suit.Diamonds, Rank.Eight, "");
+            label2.Text = "5";
+            label3.Text = "5";
 
-            //List<Card> cards2 = new List<Card> { card1, card2, card3, card4, card5 };
+            pictureBox3.BackgroundImage = null;
+            pictureBox4.BackgroundImage = null;
 
-            //label1.Text = combinations.isSeniorCards(cards2).ToString();
+            label4.Text = "";
+            label5.Text = "";
+
             label6.Text = Player.currentPlayer.Balance + " chips";
+        }
 
+        public GameForm(string nickname)
+        {
+            InitializeComponent();
+
+            string playernick = "Nickname";
+
+            label1.Text = nickname;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            restart();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -95,22 +105,7 @@ namespace Poker
             form.ShowDialog();
         }
 
-        private void foldButtonClick(object sender, EventArgs e)
-        {
-            MessageBox.Show("Game Over, you leave the game");
-            Player.currentPlayer.LastMove = Moves.Fold;
-            isUser = false;
-            fuseButton();
-        }
-
-        private void checkButtonClick(object sender, EventArgs e)
-        {
-            Player.currentPlayer.LastMove = Moves.Check;
-            isUser = false;
-            fuseButton();
-            pcMove();
-            openCards();
-        }
+        
 
         private void pcMove()
         {
@@ -130,7 +125,7 @@ namespace Poker
             int prob = probabilityOfWin();
             Random random = new Random();
             int move = random.Next(0, 100);
-            int[] Points = { 5, 10, 20, 50 };
+            int[] Points = { 5, 10, 25, 50 };
 
             if (prob <= 12)
             {
@@ -151,7 +146,7 @@ namespace Poker
                 label4.Text = "Fold In";
                 pictureBox9.BackgroundImage = Image.FromFile($"{CARD_IMG}\\{pc.Cards[0].GetImgFileName()}");
                 pictureBox8.BackgroundImage = Image.FromFile($"{CARD_IMG}\\{pc.Cards[1].GetImgFileName()}");
-                Player.currentPlayer.Balance += rate;
+                Player.currentPlayer.Balance += pc.Rate;
 
                 // TODO restart game and show message box
             }
@@ -161,24 +156,45 @@ namespace Poker
             }
             else if (pc.LastMove.Equals(Moves.Raise))
             {
-                label4.Text = "Raise";
-
+                int index = 0;
                 //наскільки піднімає бот докрутити 
-                pc.Balance -= rate;
-                Player.currentPlayer.Balance += rate;
+                if (Player.currentPlayer.LastMove == Moves.Check)
+                {
+                    index = random.Next(4);
+                    raiseBet = Points[index];
+                }
+                else if (Player.currentPlayer.LastMove == Moves.Raise)
+                {
+                    int searchIndex = Array.IndexOf(Points, raiseBet);
+                    index = random.Next(searchIndex, 4);
+                    raiseBet = Points[index];
+                }
+                else if (Player.currentPlayer.LastMove == Moves.Allin)
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("Error.");
+                }
+                pc.Balance -= raiseBet;
+                pc.Rate += raiseBet;
+                label4.Text = $"Bob raise to {pc.Rate}";
+
+
             }
             else
             {
-                label4.Text = $"Bot go to the All in bet: {pc.Balance + rate} chips";
+                label4.Text = $"Bot go to the All in bet: {pc.Balance + pc.Rate} chips";
                 raiseBet = pc.Balance;
-                rate += raiseBet;
+                pc.Rate += raiseBet;
                 pc.Balance = 0;
             }
 
             //TODO add currentBet(currentRate) property to Player and make Computer player
             if (label4.Text.Contains("All in") || label4.Text.ToLower().Contains("raise"))
             {
-                label3.Text = rate.ToString();
+                label3.Text = pc.Rate.ToString();
             }
 
             isUser = true;
@@ -243,6 +259,8 @@ namespace Poker
             //{
             //    return;
             //}
+
+
             if (Player.currentPlayer.LastMove == Moves.Check && pc.LastMove == Moves.Check)
             {
                 if (board[3] == null)
@@ -250,10 +268,15 @@ namespace Poker
                     board[3] = deck.DrawCard();
                     pictureBox3.BackgroundImage = Image.FromFile($"{CARD_IMG}\\{board[3].GetImgFileName()}");
                 }
-                else
+                else if (board[4] == null)
                 {
                     board[4] = deck.DrawCard();
                     pictureBox4.BackgroundImage = Image.FromFile($"{CARD_IMG}\\{board[4].GetImgFileName()}");
+                }
+                else
+                {
+                    MessageBox.Show("The End.");
+                    restart();
                 }
             }
             else if (Player.currentPlayer.LastMove == Moves.Raise && (pc.LastMove == Moves.Raise || pc.LastMove == Moves.Allin))
@@ -263,10 +286,15 @@ namespace Poker
                     board[3] = deck.DrawCard();
                     pictureBox3.BackgroundImage = Image.FromFile($"{CARD_IMG}\\{board[3].GetImgFileName()}");
                 }
-                else
+                else if (board[4] == null)
                 {
                     board[4] = deck.DrawCard();
                     pictureBox4.BackgroundImage = Image.FromFile($"{CARD_IMG}\\{board[4].GetImgFileName()}");
+                }
+                else
+                {
+                    MessageBox.Show("The End.");
+                    restart();
                 }
             }
             else if (Player.currentPlayer.LastMove == Moves.Allin && (pc.LastMove == Moves.Raise || pc.LastMove == Moves.Allin))
@@ -276,13 +304,34 @@ namespace Poker
                     board[3] = deck.DrawCard();
                     pictureBox3.BackgroundImage = Image.FromFile($"{CARD_IMG}\\{board[3].GetImgFileName()}");
                 }
-                else
+                else if (board[4] == null)
                 {
                     board[4] = deck.DrawCard();
                     pictureBox4.BackgroundImage = Image.FromFile($"{CARD_IMG}\\{board[4].GetImgFileName()}");
                 }
+                else
+                {
+                    MessageBox.Show("The End.");
+                    restart();
+                }
+            }
+            else if (Player.currentPlayer.LastMove == Moves.Fold || pc.LastMove == Moves.Fold)
+            {
+                if (board[3] == null)
+                {
+                    board[3] = deck.DrawCard();
+                    pictureBox3.BackgroundImage = Image.FromFile($"{CARD_IMG}\\{board[3].GetImgFileName()}");
+                }
+                if (board[4] == null)
+                {
+                    board[4] = deck.DrawCard();
+                    pictureBox4.BackgroundImage = Image.FromFile($"{CARD_IMG}\\{board[4].GetImgFileName()}");
+                }
+                MessageBox.Show("The End.");
+                restart();
             }
             openCard = false;
+
         }
 
         private CombinationCards checkCombination()
@@ -295,12 +344,26 @@ namespace Poker
                 cards.Add(board[0]);
                 cards.Add(board[1]);
                 cards.Add(board[2]);
+
+            }
+            else if (board[4] == null)
+            {
+                cards.Add(board[0]);
+                cards.Add(board[1]);
+                cards.Add(board[2]);
+                cards.Add(board[3]);
             }
             else
             {
                 //Range = додає колекцію 
                 cards.AddRange(board);
             }
+            //string str = "";
+            //foreach (Card card in cards)
+            //{
+            //    str += card.ToString()+", ";
+            //}
+            //MessageBox.Show(str);
             //реалізувати перевірку комбінації і бали комбінації повертати
 
             if (combinations.isRoyalFlush(cards))
@@ -391,6 +454,29 @@ namespace Poker
             }
         }
 
+        #region userMoves
+
+        private void foldButtonClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("Game Over, you leave the game");
+            Player.currentPlayer.LastMove = Moves.Fold;
+            isUser = false;
+            pc.Balance += Player.currentPlayer.Rate;
+            pc.Balance += pc.Rate;
+            MessageBox.Show("Bob wins and takes all bets!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            fuseButton();
+            restart();
+        }
+
+        private void checkButtonClick(object sender, EventArgs e)
+        {
+            Player.currentPlayer.LastMove = Moves.Check;
+            isUser = false;
+            fuseButton();
+            pcMove();
+            openCards();
+        }
+
         private void raiseButtonClick(object sender, EventArgs e)
         {
             isUser = false;
@@ -398,10 +484,10 @@ namespace Poker
             raise.ShowDialog();
             raiseBet = raise.bet;
             Player.currentPlayer.Balance -= raiseBet;
-            rate += raiseBet;
-            label5.Text = $"User raise bet to: {rate} chips";
+            Player.currentPlayer.Rate += raiseBet;
+            label5.Text = $"User raise bet to: {Player.currentPlayer.Rate} chips";
             label6.Text = Player.currentPlayer.Balance + " chips";
-            label2.Text = rate.ToString();
+            label2.Text = Player.currentPlayer.Rate.ToString();
             Player.currentPlayer.LastMove = Moves.Raise;
             fuseButton();
             pcMove();
@@ -420,17 +506,23 @@ namespace Poker
             else
             {
                 isUser = false;
-                label5.Text = $"User go to the ALLIN bet: {Player.currentPlayer.Balance + rate} chips";
-                rate += Player.currentPlayer.Balance;
+                label5.Text = $"User go to the ALLIN bet: {Player.currentPlayer.Balance + Player.currentPlayer.Rate} chips";
+                Player.currentPlayer.Rate += Player.currentPlayer.Balance;
                 raiseBet = Player.currentPlayer.Balance;
                 Player.currentPlayer.Balance = 0;
                 fuseButton();
                 label6.Text = Player.currentPlayer.Balance + " chips";
-                label2.Text = rate.ToString();
+                label2.Text = Player.currentPlayer.Rate.ToString();
                 Player.currentPlayer.LastMove = Moves.Allin;
                 pcMove();
                 openCards();
             }
+        }
+        #endregion
+
+        private void GameForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Serialization.updatePlayer();
         }
     }
 }

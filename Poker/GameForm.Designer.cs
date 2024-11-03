@@ -262,7 +262,7 @@
             label6.TabIndex = 20;
             label6.Text = "label6";
             // 
-            // Form1
+            // GameForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -289,8 +289,9 @@
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
-            Name = "Form1";
+            Name = "GameForm";
             Text = "Form1";
+            FormClosing += GameForm_FormClosing;
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
