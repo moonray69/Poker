@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             label1 = new Label();
+            textBox1 = new TextBox();
             button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -45,59 +43,30 @@
             label1.TabIndex = 0;
             label1.Text = "Choose how much you want to bet";
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(200, 60);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(238, 23);
+            textBox1.TabIndex = 1;
+            // 
             // button1
             // 
-            button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(12, 91);
+            button1.Location = new Point(236, 104);
             button1.Name = "button1";
-            button1.Size = new Size(99, 51);
-            button1.TabIndex = 1;
-            button1.Text = "5";
+            button1.Size = new Size(171, 38);
+            button1.TabIndex = 2;
+            button1.Text = "Raise";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(169, 91);
-            button2.Name = "button2";
-            button2.Size = new Size(101, 51);
-            button2.TabIndex = 2;
-            button2.Text = "10";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
-            // button3
-            // 
-            button3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(336, 91);
-            button3.Name = "button3";
-            button3.Size = new Size(100, 51);
-            button3.TabIndex = 3;
-            button3.Text = "25";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
-            // button4
-            // 
-            button4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Location = new Point(503, 91);
-            button4.Name = "button4";
-            button4.Size = new Size(98, 51);
-            button4.TabIndex = 4;
-            button4.Text = "50";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            button1.Click += button1_Click_1;
             // 
             // RaiseForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(613, 154);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
             Controls.Add(button1);
+            Controls.Add(textBox1);
             Controls.Add(label1);
             Name = "RaiseForm";
             Text = "RaiseForm";
@@ -108,9 +77,7 @@
         #endregion
 
         private Label label1;
+        private TextBox textBox1;
         private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
     }
 }

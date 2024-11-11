@@ -12,9 +12,12 @@ namespace Poker.Models
     public class Player
     {
         public static Player currentPlayer {  get; set; }
+
+       // public static Player pc { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Email { get; set; }
+
         private int balance;
         public int Balance
         {

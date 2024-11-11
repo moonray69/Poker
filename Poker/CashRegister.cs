@@ -31,8 +31,8 @@ namespace Poker
             //double amount = Convert.ToDouble(textBox1.Text);
 
             double convert = 10.0;
-
-            double chips = amount / convert;
+            //tyt
+            int chips = (int)(amount / convert);
 
             // Обчислюємо новий баланс
             double newBalance = Player.currentPlayer.Balance + chips;
@@ -45,7 +45,11 @@ namespace Poker
 
 
             //тута
-            Player.currentPlayer.Balance += (int)chips;
+            Player.currentPlayer.Balance += chips;
+            
+            
+
+
 
             textBox2.Text = chips.ToString();
             MessageBox.Show($"{chips} chips have been added to your balance.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

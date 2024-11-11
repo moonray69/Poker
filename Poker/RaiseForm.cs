@@ -13,61 +13,48 @@ namespace Poker
 {
     public partial class RaiseForm : Form
     {
-        public int bet { get; private set; }
-        public RaiseForm()
+        public int bet { get;  set; }
+        public bool isAccepted { get; set; }
+        private Player pc { get; set; }
+        public RaiseForm(Player pc)
         {
             InitializeComponent();
-            int ballance = Player.currentPlayer.Balance;
+            isAccepted = false;
+            this.pc = pc;
+           
+        }
+      
 
-            if(ballance < 50)
-            {
-                button4.Enabled=false;
-            }
-            if (ballance < 25)
-            {
-                button3.Enabled=false;
-            }
-            if (ballance < 10)
-            {
-                button2.Enabled=false;
-            }
-
-            if (ballance < 5)
-            {
-                button1.Enabled = false;
-                MessageBox.Show("You don`t have enough money for the raise bet");
-            }
-        }
-        //5
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            bet = 5;
-            Close();
-        }
-        //10
-        private void button2_Click(object sender, EventArgs e)
-        {
-            bet = 10;
-            Close();
-        }
-        //25
-        private void button3_Click(object sender, EventArgs e)
-        {
-            bet = 25;
-            Close();
-        }
-        //50
-        private void button4_Click(object sender, EventArgs e)
-        {
-            bet = 50;
-            Close();
+            int pcBet = 1;
+            int playerBal = Player.currentPlayer.Balance;
+            if (pc.Rate> Player.currentPlayer.Rate)
+            {
+                pcBet = pc.Rate - Player.currentPlayer.Rate;
+            }
+            
+            if(int.TryParse(textBox1.Text, out int a))
+            {
+                if (a >= pcBet && a <= playerBal)
+                {
+                    MessageBox.Show($"Your raise: {a}", "your bet is accepted");
+                    bet = a;
+                    isAccepted = true;
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show($"Your bet should be from {pcBet} to {playerBal}!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("please, input correct number!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        //private void button_Click(object sender, EventArgs e)
-        //{
-        //    Button b = (Button)sender;
-        //    bet = int.Parse(b.Text);
-        //    Close();
-        //}
+      
     }
 }

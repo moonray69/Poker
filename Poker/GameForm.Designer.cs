@@ -30,145 +30,147 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             folderBrowserDialog1 = new FolderBrowserDialog();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            button1 = new Button();
-            label1 = new Label();
-            pictureBox6 = new PictureBox();
-            pictureBox7 = new PictureBox();
-            pictureBox8 = new PictureBox();
-            pictureBox9 = new PictureBox();
-            pictureBox5 = new PictureBox();
+            cardDeckPictureBox2 = new PictureBox();
+            cardDeckPictureBox3 = new PictureBox();
+            cardDeckPictureBox4 = new PictureBox();
+            cardDeckPictureBox5 = new PictureBox();
+            combinationButton1 = new Button();
+            namePlayerLabel = new Label();
+            playerCardPictureBox2 = new PictureBox();
+            playerCardPictureBox1 = new PictureBox();
+            pcCardPictureBox2 = new PictureBox();
+            pcCardPictureBox1 = new PictureBox();
+            cardDeckPictureBox1 = new PictureBox();
             foldButton = new Button();
             checkButton = new Button();
             raiseButton = new Button();
             allinButton = new Button();
-            label2 = new Label();
-            label3 = new Label();
+            ratePlayerLabel = new Label();
+            ratePcLabel = new Label();
             label4 = new Label();
             label5 = new Label();
-            label6 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            balancePlayerLabel = new Label();
+            balancePcLabel = new Label();
+            bankLabel = new Label();
+            ((System.ComponentModel.ISupportInitialize)cardDeckPictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cardDeckPictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cardDeckPictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cardDeckPictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)playerCardPictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)playerCardPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcCardPictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcCardPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cardDeckPictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // cardDeckPictureBox2
             // 
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Location = new Point(811, 233);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(101, 145);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            cardDeckPictureBox2.BackgroundImage = (Image)resources.GetObject("cardDeckPictureBox2.BackgroundImage");
+            cardDeckPictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
+            cardDeckPictureBox2.Location = new Point(811, 233);
+            cardDeckPictureBox2.Name = "cardDeckPictureBox2";
+            cardDeckPictureBox2.Size = new Size(101, 145);
+            cardDeckPictureBox2.TabIndex = 0;
+            cardDeckPictureBox2.TabStop = false;
             // 
-            // pictureBox2
+            // cardDeckPictureBox3
             // 
-            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
-            pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox2.Location = new Point(662, 233);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(100, 145);
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
+            cardDeckPictureBox3.BackgroundImage = (Image)resources.GetObject("cardDeckPictureBox3.BackgroundImage");
+            cardDeckPictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
+            cardDeckPictureBox3.Location = new Point(662, 233);
+            cardDeckPictureBox3.Name = "cardDeckPictureBox3";
+            cardDeckPictureBox3.Size = new Size(100, 145);
+            cardDeckPictureBox3.TabIndex = 1;
+            cardDeckPictureBox3.TabStop = false;
             // 
-            // pictureBox3
+            // cardDeckPictureBox4
             // 
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox3.Location = new Point(511, 233);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(100, 145);
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
+            cardDeckPictureBox4.BackColor = Color.Transparent;
+            cardDeckPictureBox4.BackgroundImageLayout = ImageLayout.Zoom;
+            cardDeckPictureBox4.Location = new Point(511, 233);
+            cardDeckPictureBox4.Name = "cardDeckPictureBox4";
+            cardDeckPictureBox4.Size = new Size(100, 145);
+            cardDeckPictureBox4.TabIndex = 2;
+            cardDeckPictureBox4.TabStop = false;
             // 
-            // pictureBox4
+            // cardDeckPictureBox5
             // 
-            pictureBox4.BackColor = Color.Transparent;
-            pictureBox4.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox4.Location = new Point(355, 233);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(100, 145);
-            pictureBox4.TabIndex = 3;
-            pictureBox4.TabStop = false;
+            cardDeckPictureBox5.BackColor = Color.Transparent;
+            cardDeckPictureBox5.BackgroundImageLayout = ImageLayout.Zoom;
+            cardDeckPictureBox5.Location = new Point(355, 233);
+            cardDeckPictureBox5.Name = "cardDeckPictureBox5";
+            cardDeckPictureBox5.Size = new Size(100, 145);
+            cardDeckPictureBox5.TabIndex = 3;
+            cardDeckPictureBox5.TabStop = false;
             // 
-            // button1
+            // combinationButton1
             // 
-            button1.Location = new Point(45, 558);
-            button1.Name = "button1";
-            button1.Size = new Size(88, 43);
-            button1.TabIndex = 5;
-            button1.Text = "Комбінації";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            combinationButton1.Location = new Point(45, 558);
+            combinationButton1.Name = "combinationButton1";
+            combinationButton1.Size = new Size(88, 43);
+            combinationButton1.TabIndex = 5;
+            combinationButton1.Text = "Комбінації";
+            combinationButton1.UseVisualStyleBackColor = true;
+            combinationButton1.Click += button1_Click;
             // 
-            // label1
+            // namePlayerLabel
             // 
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(680, 580);
-            label1.Name = "label1";
-            label1.Size = new Size(124, 45);
-            label1.TabIndex = 6;
-            label1.Text = "label1";
+            namePlayerLabel.BackColor = Color.Transparent;
+            namePlayerLabel.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
+            namePlayerLabel.ForeColor = SystemColors.ControlLightLight;
+            namePlayerLabel.Location = new Point(680, 580);
+            namePlayerLabel.Name = "namePlayerLabel";
+            namePlayerLabel.Size = new Size(124, 45);
+            namePlayerLabel.TabIndex = 6;
+            namePlayerLabel.Text = "label1";
             // 
-            // pictureBox6
+            // playerCardPictureBox2
             // 
-            pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox6.Location = new Point(629, 432);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(100, 145);
-            pictureBox6.TabIndex = 7;
-            pictureBox6.TabStop = false;
+            playerCardPictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
+            playerCardPictureBox2.Location = new Point(629, 432);
+            playerCardPictureBox2.Name = "playerCardPictureBox2";
+            playerCardPictureBox2.Size = new Size(100, 145);
+            playerCardPictureBox2.TabIndex = 7;
+            playerCardPictureBox2.TabStop = false;
             // 
-            // pictureBox7
+            // playerCardPictureBox1
             // 
-            pictureBox7.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox7.Location = new Point(748, 432);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(101, 145);
-            pictureBox7.TabIndex = 8;
-            pictureBox7.TabStop = false;
+            playerCardPictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            playerCardPictureBox1.Location = new Point(748, 432);
+            playerCardPictureBox1.Name = "playerCardPictureBox1";
+            playerCardPictureBox1.Size = new Size(101, 145);
+            playerCardPictureBox1.TabIndex = 8;
+            playerCardPictureBox1.TabStop = false;
             // 
-            // pictureBox8
+            // pcCardPictureBox2
             // 
-            pictureBox8.BackgroundImage = (Image)resources.GetObject("pictureBox8.BackgroundImage");
-            pictureBox8.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox8.Location = new Point(629, 37);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(100, 145);
-            pictureBox8.TabIndex = 10;
-            pictureBox8.TabStop = false;
+            pcCardPictureBox2.BackgroundImage = (Image)resources.GetObject("pcCardPictureBox2.BackgroundImage");
+            pcCardPictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
+            pcCardPictureBox2.Location = new Point(629, 37);
+            pcCardPictureBox2.Name = "pcCardPictureBox2";
+            pcCardPictureBox2.Size = new Size(100, 145);
+            pcCardPictureBox2.TabIndex = 10;
+            pcCardPictureBox2.TabStop = false;
             // 
-            // pictureBox9
+            // pcCardPictureBox1
             // 
-            pictureBox9.BackgroundImage = (Image)resources.GetObject("pictureBox9.BackgroundImage");
-            pictureBox9.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox9.Location = new Point(749, 37);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(100, 145);
-            pictureBox9.TabIndex = 9;
-            pictureBox9.TabStop = false;
+            pcCardPictureBox1.BackgroundImage = (Image)resources.GetObject("pcCardPictureBox1.BackgroundImage");
+            pcCardPictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pcCardPictureBox1.Location = new Point(749, 37);
+            pcCardPictureBox1.Name = "pcCardPictureBox1";
+            pcCardPictureBox1.Size = new Size(100, 145);
+            pcCardPictureBox1.TabIndex = 9;
+            pcCardPictureBox1.TabStop = false;
             // 
-            // pictureBox5
+            // cardDeckPictureBox1
             // 
-            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
-            pictureBox5.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox5.Location = new Point(970, 233);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(101, 145);
-            pictureBox5.TabIndex = 11;
-            pictureBox5.TabStop = false;
+            cardDeckPictureBox1.BackgroundImage = (Image)resources.GetObject("cardDeckPictureBox1.BackgroundImage");
+            cardDeckPictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            cardDeckPictureBox1.Location = new Point(970, 233);
+            cardDeckPictureBox1.Name = "cardDeckPictureBox1";
+            cardDeckPictureBox1.Size = new Size(101, 145);
+            cardDeckPictureBox1.TabIndex = 11;
+            cardDeckPictureBox1.TabStop = false;
             // 
             // foldButton
             // 
@@ -210,29 +212,29 @@
             allinButton.UseVisualStyleBackColor = true;
             allinButton.Click += allinButtonClick;
             // 
-            // label2
+            // ratePlayerLabel
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.Gold;
-            label2.Location = new Point(715, 408);
-            label2.Name = "label2";
-            label2.Size = new Size(65, 25);
-            label2.TabIndex = 16;
-            label2.Text = "label2";
+            ratePlayerLabel.AutoSize = true;
+            ratePlayerLabel.BackColor = Color.Transparent;
+            ratePlayerLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            ratePlayerLabel.ForeColor = Color.Gold;
+            ratePlayerLabel.Location = new Point(715, 408);
+            ratePlayerLabel.Name = "ratePlayerLabel";
+            ratePlayerLabel.Size = new Size(65, 25);
+            ratePlayerLabel.TabIndex = 16;
+            ratePlayerLabel.Text = "label2";
             // 
-            // label3
+            // ratePcLabel
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.Gold;
-            label3.Location = new Point(715, 185);
-            label3.Name = "label3";
-            label3.Size = new Size(65, 25);
-            label3.TabIndex = 17;
-            label3.Text = "label3";
+            ratePcLabel.AutoSize = true;
+            ratePcLabel.BackColor = Color.Transparent;
+            ratePcLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            ratePcLabel.ForeColor = Color.Gold;
+            ratePcLabel.Location = new Point(715, 185);
+            ratePcLabel.Name = "ratePcLabel";
+            ratePcLabel.Size = new Size(65, 25);
+            ratePcLabel.TabIndex = 17;
+            ratePcLabel.Text = "label3";
             // 
             // label4
             // 
@@ -252,15 +254,36 @@
             label5.Size = new Size(0, 40);
             label5.TabIndex = 19;
             // 
-            // label6
+            // balancePlayerLabel
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(1408, 22);
-            label6.Name = "label6";
-            label6.Size = new Size(94, 40);
-            label6.TabIndex = 20;
-            label6.Text = "label6";
+            balancePlayerLabel.AutoSize = true;
+            balancePlayerLabel.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+            balancePlayerLabel.Location = new Point(361, 513);
+            balancePlayerLabel.Name = "balancePlayerLabel";
+            balancePlayerLabel.Size = new Size(94, 40);
+            balancePlayerLabel.TabIndex = 20;
+            balancePlayerLabel.Text = "label6";
+            balancePlayerLabel.Click += balancePlayerLabel_Click;
+            // 
+            // balancePcLabel
+            // 
+            balancePcLabel.AutoSize = true;
+            balancePcLabel.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+            balancePcLabel.Location = new Point(361, 87);
+            balancePcLabel.Name = "balancePcLabel";
+            balancePcLabel.Size = new Size(94, 40);
+            balancePcLabel.TabIndex = 22;
+            balancePcLabel.Text = "label6";
+            // 
+            // bankLabel
+            // 
+            bankLabel.AutoSize = true;
+            bankLabel.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+            bankLabel.Location = new Point(1394, 52);
+            bankLabel.Name = "bankLabel";
+            bankLabel.Size = new Size(94, 40);
+            bankLabel.TabIndex = 23;
+            bankLabel.Text = "label6";
             // 
             // GameForm
             // 
@@ -269,39 +292,41 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1536, 634);
-            Controls.Add(label6);
+            Controls.Add(bankLabel);
+            Controls.Add(balancePcLabel);
+            Controls.Add(balancePlayerLabel);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(ratePcLabel);
+            Controls.Add(ratePlayerLabel);
             Controls.Add(allinButton);
             Controls.Add(raiseButton);
             Controls.Add(checkButton);
             Controls.Add(foldButton);
-            Controls.Add(pictureBox5);
-            Controls.Add(pictureBox8);
-            Controls.Add(pictureBox9);
-            Controls.Add(pictureBox7);
-            Controls.Add(pictureBox6);
-            Controls.Add(label1);
-            Controls.Add(button1);
-            Controls.Add(pictureBox4);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
+            Controls.Add(cardDeckPictureBox1);
+            Controls.Add(pcCardPictureBox2);
+            Controls.Add(pcCardPictureBox1);
+            Controls.Add(playerCardPictureBox1);
+            Controls.Add(playerCardPictureBox2);
+            Controls.Add(namePlayerLabel);
+            Controls.Add(combinationButton1);
+            Controls.Add(cardDeckPictureBox5);
+            Controls.Add(cardDeckPictureBox4);
+            Controls.Add(cardDeckPictureBox3);
+            Controls.Add(cardDeckPictureBox2);
             Name = "GameForm";
             Text = "Form1";
             FormClosing += GameForm_FormClosing;
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cardDeckPictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cardDeckPictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cardDeckPictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cardDeckPictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)playerCardPictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)playerCardPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcCardPictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcCardPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cardDeckPictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -309,25 +334,27 @@
         #endregion
 
         private FolderBrowserDialog folderBrowserDialog1;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
-        private Button button1;
-        private Label label1;
-        private PictureBox pictureBox6;
-        private PictureBox pictureBox7;
-        private PictureBox pictureBox8;
-        private PictureBox pictureBox9;
-        private PictureBox pictureBox5;
+        private PictureBox cardDeckPictureBox2;
+        private PictureBox cardDeckPictureBox3;
+        private PictureBox cardDeckPictureBox4;
+        private PictureBox cardDeckPictureBox5;
+        private Button combinationButton1;
+        private Label namePlayerLabel;
+        private PictureBox playerCardPictureBox2;
+        private PictureBox playerCardPictureBox1;
+        private PictureBox pcCardPictureBox2;
+        private PictureBox pcCardPictureBox1;
+        private PictureBox cardDeckPictureBox1;
         private Button foldButton;
         private Button checkButton;
         private Button raiseButton;
         private Button allinButton;
-        private Label label2;
-        private Label label3;
+        private Label ratePlayerLabel;
+        private Label ratePcLabel;
         private Label label4;
         private Label label5;
-        private Label label6;
+        private Label balancePlayerLabel;
+        private Label balancePcLabel;
+        private Label bankLabel;
     }
 }
