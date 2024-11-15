@@ -39,7 +39,7 @@ namespace Poker
             File.WriteAllText(fileName, jsonOutput);
             return true;
         }
-        //? = це означає , що може бути нал
+
         public static Player ? findPlayer(string username, string password) 
         {
             List<Player> players = getAllPlayers();
@@ -58,8 +58,6 @@ namespace Poker
             }
             return jsonData;
         }
-
-        // write method that get all players and update current player. And save this data to json
 
         public static void updatePlayer()
         {

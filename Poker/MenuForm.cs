@@ -22,11 +22,6 @@ namespace Poker
             this.nickname = nickname;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (Player.currentPlayer.Balance < 5)
@@ -36,8 +31,10 @@ namespace Poker
             }
 
             GameForm f1 = new GameForm(nickname);
-            f1.ShowDialog();
             Hide();
+            f1.ShowDialog();
+           this.Show();
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -45,7 +42,6 @@ namespace Poker
             CashRegister cash = new CashRegister();
 
             cash.ShowDialog();
-            //Hide();
         }
 
         private void MenuForm_FormClosing(object sender, FormClosingEventArgs e)

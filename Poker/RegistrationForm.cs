@@ -59,14 +59,6 @@ namespace Poker
             {
                 MessageBox.Show("This nickname is already taken. Please choose a different one", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
-            //using (PlayerContext db = new PlayerContext()) // автоматичне закриття бази даних
-            //{
-            //    db.Players.Add(player);
-            //    db.SaveChanges();
-
-            //}
-            
 
         }
     }

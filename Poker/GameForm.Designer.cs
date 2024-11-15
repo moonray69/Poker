@@ -263,7 +263,6 @@
             balancePlayerLabel.Size = new Size(94, 40);
             balancePlayerLabel.TabIndex = 20;
             balancePlayerLabel.Text = "label6";
-            balancePlayerLabel.Click += balancePlayerLabel_Click;
             // 
             // balancePcLabel
             // 

@@ -17,10 +17,10 @@ namespace Poker
         Eight,
         Nine,
         Ten,
-        Jack,// валет
+        Jack,
         Queen,
         King,
-        Ace // туз
+        Ace 
     }
 
 }

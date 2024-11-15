@@ -49,8 +49,6 @@ namespace Poker
         {
             // Сортуємо ранги
             ranks = ranks.OrderBy(r => r).ToList();
-            //orderby задает сортировку возвращаемой последовательности или вложенной последовательности (группы) в порядке возрастания или убывания. 
-
             // Перевіряємо послідовність
             for (int i = 0; i < ranks.Count - 1; i++)
             {
@@ -66,7 +64,6 @@ namespace Poker
         //це Каре масті
         public bool isFourOfAKind(List<Card> cards)
         {
-            //return cards.GroupBy(d => d.rank).Any(d => d.Count() == 4);
             var rankGroup = cards.GroupBy(d => d.rank);
             foreach (var group in rankGroup)
             {

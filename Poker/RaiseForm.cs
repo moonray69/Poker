@@ -24,7 +24,6 @@ namespace Poker
            
         }
       
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             int pcBet = 1;
@@ -54,7 +53,5 @@ namespace Poker
                 MessageBox.Show("please, input correct number!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-      
     }
 }

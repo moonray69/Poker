@@ -57,7 +57,6 @@
             label1.Size = new Size(203, 78);
             label1.TabIndex = 1;
             label1.Text = "Casino ";
-            label1.Click += label1_Click;
             // 
             // label3
             // 

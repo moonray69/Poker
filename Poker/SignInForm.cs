@@ -52,7 +52,7 @@ namespace Poker
             RegistrationForm f5 = new RegistrationForm();
             Hide();
             f5.ShowDialog();
-            Show();// ховає зайві вікна
+            Show();
 
         }
     }

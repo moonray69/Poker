@@ -13,7 +13,6 @@ namespace Poker
 {
     public partial class CashRegister : Form
     {
-        // Змінна для зберігання попереднього балансу
         public CashRegister()
         {
             InitializeComponent();
@@ -28,10 +27,8 @@ namespace Poker
                 return;
             }
 
-            //double amount = Convert.ToDouble(textBox1.Text);
-
             double convert = 10.0;
-            //tyt
+
             int chips = (int)(amount / convert);
 
             // Обчислюємо новий баланс
@@ -43,21 +40,13 @@ namespace Poker
                 return;
             }
 
-
-            //тута
             Player.currentPlayer.Balance += chips;
             
-            
-
-
 
             textBox2.Text = chips.ToString();
             MessageBox.Show($"{chips} chips have been added to your balance.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Передаем сумму фишек в Form1
-
             textBox2.Text = chips.ToString();
-            //mainForm.updateBalanceChips(Player.currentPlayer.Balance);
         }
     }
 }

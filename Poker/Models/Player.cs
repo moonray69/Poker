@@ -13,7 +13,6 @@ namespace Poker.Models
     {
         public static Player currentPlayer {  get; set; }
 
-       // public static Player pc { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Email { get; set; }
@@ -40,7 +39,6 @@ namespace Poker.Models
         }
         public int Rate {  get; set; }
 
-
         public string Nickname { get; set; }
         public string Phone { get; set; }
         public string Password { get; set; }
@@ -50,28 +48,5 @@ namespace Poker.Models
         public int CurrentRate { get; set; } = 0;
 
         public Moves LastMove { get; set; }
-
-        //Player()
-        //{
-        //    Name = "";
-        //    Surname = "";
-        //    Email = "";
-        //    Nickname = "";
-        //    Phone = "";
-        //    Password = "";
-        //}
-
-        //Player(string name, string surname, string email, string nickname, string phone, string password)
-        //{
-        //    Name = name;
-        //    Surname = surname;
-        //    Email = email;
-        //    Nickname = nickname;
-        //    Phone = phone;
-        //    Password = password;
-        //}
-
-
-
     }
 }
